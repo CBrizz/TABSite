@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tractorbeam Technical Advisory Board</title>
+  <meta name="description" content="Tractorbeam Technical Advisory Board page.">
+  <style>
+    :root {
+      font-family: sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      line-height: 1.4;
+      font-size: 16px;
+      padding: 0 1rem;
+      margin: 1rem auto;
+      max-width: 42rem;
+    }
+
+    p,
+    ul,
+    ol {
+      color: #27272a;
+    }
+
+    main {
+      max-width: 42rem;
+      margin: 2rem auto;
+    }
+
+    details>summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    hr {
+      margin-top: 1rem;
+    }
+
+    pre {
+      font-family: monospace;
+      background-color: #f0f0f0;
+      padding: 0rem 1rem;
+      overflow-x: auto;
+    }
+
+    a {
+      color: #059669;
+    }
+
+    /* Password form styles */
+    .password-container {
+      font-family: sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: white;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .password-form-wrapper {
+      max-width: 320px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .logo-container {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 2rem;
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .password-form-inner {
+      margin-top: 1rem;
+    }
+
+    .password-form-inner h2 {
+      color: #27272a;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #27272a;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      background-color: #059669;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #047857;
+    }
+
+    .error {
+      color: #dc2626;
+      margin: 0.5rem 0;
+      display: none;
+      font-size: 0.875rem;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .main-logo-container {
+      width: 60px;
+      height: 60px;
+      margin: 2rem 0;
+    }
+
+    .password-field-container {
+      position: relative;
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+
+    .password-toggle-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      color: #27272a;
+    }
+
+    .password-toggle-btn:hover {
+      background: none;
+      color: #059669;
+    }
+
+    /* Adjust password input padding to accommodate the toggle button */
+    #passwordInput {
+      padding-right: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="passwordForm" class="password-container">
+    <div class="password-form-wrapper">
+      <div class="logo-container">
+        <img src="/Images/favicon.svg" alt="Tractorbeam Logo">
+      </div>
+      <div class="password-form-inner">
+        <h2>Welcome to TAB</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name" autocomplete="name">
+        <div class="password-field-container">
+          <input type="password" id="passwordInput" placeholder="Enter password">
+          <button type="button" class="password-toggle-btn" onclick="togglePassword()">
+            <svg id="eyeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+        </div>
+        <button onclick="checkPassword()">Submit</button>
+        <p id="errorMessage" class="error">Incorrect password. Please try again.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="protectedContent" class="content">
+    <main>
+      <div class="main-logo-container">
+        <img src="/Images/favicon.svg" alt="Tractorbeam Logo" width="60" height="60">
+      </div>
+      <h1>Tractorbeam Technical Advisory Board</h1>
+      <p>
+        The Tractorbeam Technical Advisory Board (TAB) is a collaborative group dedicated to providing strategic
+        guidance and expert insights to enhance our technology. The TAB plays a crucial role in shaping the future
+        direction of Tractorbeam by identifying key challenges, opportunities, and innovations in data retrieval and AI.
+        Please feel free to <a
+          href="mailto:charlie@tractorbeam.ai">email me</a>, 
+        <a
+          href="https://cal.com/brizz/30min">book time</a>, or <a href="sms:+17085225766?body=Hey%20can%20you%20send%20me%20another%20(T-shirt,%20Sweatshirt,%20Meteorite,%20or%20Key%20Cap)">text me!</a>
+    </p>
+      <hr>
+      <h2>Most Pressing Issues</h2>
+      <p>
+        I am gathering my insights by taking all of our conversations, summarizing them, and finding patterns through
+        them. This process helps identify key themes and areas of focus, enabling more informed decision-making and
+        strategic planning.The top three are listed here.
+      </p>
+      <ul>
+        <li>
+          <strong>Data Scalability:</strong> Managing and efficiently retrieving data at scale remains a significant
+          challenge as data volumes continue to grow exponentially.
+        </li>
+        <li>
+          <strong>AI Integration Complexity:</strong> Seamlessly integrating AI solutions with existing systems to
+          provide accurate and reliable results is complex and requires ongoing refinement.
+        </li>
+        <li>
+          <strong>Ethical AI and Bias Mitigation:</strong> Ensuring that AI systems are free from bias and operate
+          ethically is critical to building trust and compliance with regulatory standards.
+        </li>
+      </ul>
+
+      <hr>
+
+      <h2>What I Am Learning</h2>
+      <p></p>
+      <details>
+        <summary>The Importance of Ontologies in AI</summary>
+        <p>
+          Exploring how ontologies can improve the semantic understanding of AI systems, leading to more accurate and
+          relevant data retrieval.
+        </p>
+      </details>
+      <details>
+        <summary>Advancements in Serverless Architectures</summary>
+        <p>
+          Investigating how serverless technologies can offer scalable and cost-effective solutions for knowledge graph
+          infrastructure.
+        </p>
+      </details>
+      <details>
+        <summary>Strategies for Data Privacy</summary>
+        <p>
+          Learning about new methodologies to protect sensitive information while maintaining system performance and
+          usability.
+        </p>
+      </details>
+      <p></p>
+      <hr>
+
+      <p><i>Last Updated: November 7, 2024</i></p>
+
+      <p>
+        <a href="mailto:charlie@tractorbeam.ai">Contact</a>
+      </p>
+      <hr>
+      
+    </main>
+  </div>
+
+  <script>
+    // Function to toggle password visibility
+    function togglePassword() {
+      const passwordInput = document.getElementById('passwordInput');
+      const eyeIcon = document.getElementById('eyeIcon');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        // Update to crossed-out eye icon
+        eyeIcon.innerHTML = `
+                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                `;
+      } else {
+        passwordInput.type = 'password';
+        // Update to regular eye icon
+        eyeIcon.innerHTML = `
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                `;
+      }
+    }
+
+    // Function to check password
+    function checkPassword() {
+      const name = document.getElementById('nameInput').value.trim();
+      const password = document.getElementById('passwordInput').value;
+      const correctPassword = 'TractorbeamTAB2024!';
+      const errorMessage = document.getElementById('errorMessage');
+
+      if (!name) {
+        errorMessage.textContent = 'Please enter your name.';
+        errorMessage.style.display = 'block';
+        return;
+      }
+
+      if (password === correctPassword) {
+        document.getElementById('passwordForm').style.display = 'none';
+        document.getElementById('protectedContent').style.display = 'block';
+        errorMessage.style.display = 'none';
+      } else {
+        errorMessage.textContent = 'Incorrect password. Please try again.';
+        errorMessage.style.display = 'block';
+        document.getElementById('passwordInput').value = '';
+      }
+    }
+
+    // Add event listeners when the document is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Event listener for Enter key on password input
+      document.getElementById('passwordInput').addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+          checkPassword();
+        }
+      });
+
+      // Event listener for Enter key on name input
+      document.getElementById('nameInput').addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+          document.getElementById('passwordInput').focus();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
